@@ -1,0 +1,16 @@
+section.about-us {
+    padding: 60px 0;
+    width: 100%;
+}
+section.about-us div.icon-container {
+    float: left;
+    border-radius: 100%;
+    border: 2px solid $secondary;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+section.about-us div.icon-container i {
+    font-size: 20px;
+    color: $secondary;
+}

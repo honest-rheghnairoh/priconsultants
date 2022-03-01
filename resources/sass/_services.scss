@@ -1,0 +1,15 @@
+section.services {
+    padding-top: 60px;
+    width: 100%;
+    background-color: $secondary;
+}
+
+section.services div.service-container {
+    background-color: $body-bg;
+    border-radius: 15px;
+    padding: 35px 35px 35px 15px;
+    margin: 0 50px 30px 50px;
+}
+section.services div.icon-container i {
+    font-size: 60px;
+}

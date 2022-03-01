@@ -1,0 +1,20 @@
+section.portfolio {
+    padding-top: 60px;
+    width: 100%;
+    background-color: $body-bg;
+}
+
+section.portfolio a.filter {
+    border-radius: 20px;
+    padding: 5px 20px;
+}
+
+section.portfolio .row .image-wrapper {
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+section.portfolio .row .image-container {
+    border-radius: 10px;
+    overflow: hidden;
+}
