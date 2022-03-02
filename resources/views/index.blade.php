@@ -8,8 +8,9 @@
         <title>{{ config('app.name') }}</title>
 
         <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap"
+        <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700&display=swap"
+            rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"
             rel="stylesheet">
 
         <!-- Scripts -->
@@ -18,7 +19,7 @@
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     </head>
 
-    <body class="antialiased">
+    <body class="app">
         <!-- BEGIN nav -->
         <nav class="container navbar navbar-expand-lg navbar-light bg-light">
             <a class="navbar-brand" href="{{ route('home') }}" id="brand-name">
@@ -69,16 +70,16 @@
 
         <!-- START home section -->
         <section class="home" id="home"
-            style="background: url({{ asset('images/home.png') }}) center bottom no-repeat;background-size: auto;background-size: cover;">
+            style="background: url({{ asset('/images/'.$home->cover) }}) center bottom no-repeat;background-size: auto;background-size: cover;">
             <div class="container d-flex flex-column">
                 <div class="align-self-center align-self-lg-start">
-                    <h2 class="home-heading text-light font-weight-bolder">We provide <br>
-                        <span class="text-primary">solutions</span><br>
-                        for your business
+                    <h2 class="home-heading text-light font-weight-bolder">{{ $home->header_top }} <br>
+                        <span class="text-primary">{{ $home->header_middle }}</span><br>
+                        {{ $home->header_bottom }}
                     </h2>
                 </div>
                 <div class="py-5 align-self-center align-self-lg-start">
-                    <a href="#about" class="btn-get-started bg-primary text-light px-5 py-3 mr-4 border-primary">
+                    <a href="#about" class="btn-get-started bg-secondary text-light px-5 py-3 mr-4 border-primary">
                         Get Started
                     </a>
                     <a href="#services" class="btn-our-services bg-transparent text-light px-5 py-3 ml-4">

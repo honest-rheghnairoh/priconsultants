@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\HomeSectionController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,13 +14,26 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-})->name('home');
+Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::group(['prefix' => 'admin'], function () {
-    Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('admin.home');
-    Auth::routes();
-});
+    Auth::routes([
+        'login' => true,
+        'logout' => true,
+        'register' => false,
+        'reset' => false,
+        'confirm' => false,
+        'verify' => false,
+    ]);
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+    Route::get('/', [App\Http\Controllers\Admin\HomeController::class, 'index'])->name('admin.home');
+    // home section
+    Route::get(
+        'home/{homeSection}/edit',
+        [HomeSectionController::class, 'edit']
+    )->name('home.edit');
+    Route::post(
+        'home/{homeSection}',
+        [HomeSectionController::class, 'update']
+    )->name('home.update');
+});

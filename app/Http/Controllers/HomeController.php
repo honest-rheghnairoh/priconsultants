@@ -2,27 +2,19 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\HomeSection;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
     /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
-
-    /**
-     * Show the application dashboard.
+     * Show the application index.
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
     public function index()
     {
-        return view('admin.home');
+        $data['home'] = HomeSection::find(1);
+        return view('index', $data);
     }
 }
