@@ -74,7 +74,7 @@
             <div class="container d-flex flex-column">
                 <div class="align-self-center align-self-lg-start">
                     <h2 class="home-heading text-light font-weight-bolder">{{ $home->header_top }} <br>
-                        <span class="text-primary">{{ $home->header_middle }}</span><br>
+                        <span class="text-secondary">{{ $home->header_middle }}</span><br>
                         {{ $home->header_bottom }}
                     </h2>
                 </div>

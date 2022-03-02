@@ -15,6 +15,9 @@
                     @endif
 
                     <p>Welcome to the NEWBIZ Admin!</p>
+
+                    <p class="text-danger">To edit your website, click the section you want to edit from the navigation
+                        links to your left above. </p>
                 </div>
             </div>
         </div>
